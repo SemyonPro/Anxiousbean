@@ -33,22 +33,26 @@ const Header = () => {
                     </Nav>
 
                     <Dropdown  className="pr-1">
-                        <Dropdown.Toggle split variant="btn btn-outline-dark" id="dropdown-split-basic">
+                        <Dropdown.Toggle split variant="" id="dropdown-split-basic">
                         <BsPersonFill/>
                         </Dropdown.Toggle>
-                        <Dropdown.Menu>
 
+                        <Dropdown.Menu>
+                        <NavDropdown.Item><StyledLink to="/profile">Profile</StyledLink></NavDropdown.Item>
+                        <NavDropdown.Item><StyledLink to="/login">Login / Sign Up</StyledLink></NavDropdown.Item>
                         </Dropdown.Menu>
+
                     </Dropdown>
 
                     <Dropdown as={ButtonGroup}>
-                        <Dropdown.Toggle className="btn btn-outline-dark text-dark" split variant="" id="dropdown-split-basic">
+                        <Dropdown.Toggle className="" split variant="" id="dropdown-split-basic">
                         <FaShoppingCart/>
                         <StyledBadge>{10}</StyledBadge>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
                         </Dropdown.Menu>
+                        
                     </Dropdown>
 
                 </Navbar.Collapse>

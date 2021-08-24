@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 
 const HeroText = () => {
   return (
@@ -9,13 +11,21 @@ const HeroText = () => {
       <h2>Flavors</h2>
       <h2>Worldwide</h2>
       <BtnContainer>
-        <button className="readmore">Choose Taste</button>
-        <button>Coffee Subscription</button>
+        <button className="readmore"><StyledLink to="/choosetaste">Choose Taste</StyledLink></button>
+        <button><StyledLink to="/subscription">Coffee Subscription</StyledLink></button>
       </BtnContainer>
     </Container>
   );
 };
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`;
 const BtnContainer = styled.div`
   margin-top: 2rem;
   button {
