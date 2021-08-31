@@ -1,9 +1,9 @@
 import React from 'react'
 import { Navbar, Container, Nav, NavDropdown, Dropdown, ButtonGroup, Badge } from "react-bootstrap"
-import {FaShoppingCart} from "react-icons/fa"
-import {BsPersonFill} from "react-icons/bs"
+import { FaShoppingCart } from "react-icons/fa"
+import { BsPersonFill } from "react-icons/bs"
 import { Link } from 'react-router-dom'
-import {ReactComponent as Logo} from './assets/Black logo - no background.svg';
+import { ReactComponent as Logo } from './assets/Black logo - no background.svg';
 import styled from 'styled-components'
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
             <Container>
 
                 <Navbar.Brand>
-                <Link NavLink to="/"><Logo/></Link>
+                    <Link NavLink to="/"><Logo /></Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -32,27 +32,27 @@ const Header = () => {
 
                     </Nav>
 
-                    <Dropdown  className="pr-1">
+                    <Dropdown className="pr-1">
                         <Dropdown.Toggle split variant="" id="dropdown-split-basic">
-                        <BsPersonFill/>
+                            <BsPersonFill />
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                        <NavDropdown.Item><StyledLink to="/profile">Profile</StyledLink></NavDropdown.Item>
-                        <NavDropdown.Item><StyledLink to="/login">Login / Sign Up</StyledLink></NavDropdown.Item>
+                            <NavDropdown.Item><StyledLink to="/profile">Profile</StyledLink></NavDropdown.Item>
+                            <NavDropdown.Item><StyledLink to="/login">Login / Sign Up</StyledLink></NavDropdown.Item>
                         </Dropdown.Menu>
 
                     </Dropdown>
 
                     <Dropdown as={ButtonGroup}>
                         <Dropdown.Toggle className="" split variant="" id="dropdown-split-basic">
-                        <FaShoppingCart/>
-                        <StyledBadge>{10}</StyledBadge>
+                            <FaShoppingCart />
+                            <StyledBadge>{10}</StyledBadge>
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
                         </Dropdown.Menu>
-                        
+
                     </Dropdown>
 
                 </Navbar.Collapse>
