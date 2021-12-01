@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "server for my anxious bean ecommerce application",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
   },
   "author": "",
-  "type": "module",
   "license": "ISC",
   "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^6.2.1",
@@ -19,8 +22,13 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.7",
+    "mongoose": "^5.13.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
     "nodemon": "^2.0.12",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "react-paypal-button-v2": "^2.6.3",
     "react-router-bootstrap": "^0.25.0"
   }
 }

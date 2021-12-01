@@ -5,20 +5,20 @@ import HeroText from "./HeroText";
 import Tilt from "react-tilt";
 
 const Hero = () => {
-    return (
-        <Container >
-            <Wrapper>
-                <InnerWrapper>
-                    <Left>
-                        <HeroText />
-                    </Left>
-                    <TiltWrapper options={{ max: 25 }}>
-                        <Img src={image} alt="@gouthamgtronics" />
-                    </TiltWrapper>
-                </InnerWrapper>
-            </Wrapper>
-        </Container>
-    );
+  return (
+    <Container >
+      <Wrapper>
+        <InnerWrapper>
+          <Left>
+            <HeroText />
+          </Left>
+          <TiltWrapper options={{ max: 25 }}>
+            <Img src={image} alt="@gouthamgtronics" />
+          </TiltWrapper>
+        </InnerWrapper>
+      </Wrapper>
+    </Container>
+  );
 };
 
 const Left = styled.div`

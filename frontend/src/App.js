@@ -1,40 +1,59 @@
-import { BrowserRouter, Route } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header';
-import Main from './components/Main';
-import ProductsList from './components/pages/Products';
-import Cart from './components/pages/Cart';
-import Footer from './components/Footer';
-import Contact from './components/pages/Contact';
-import About from './components/pages/About';
-import Subscription from './components/pages/Subscription';
-import Login from './components/pages/Login.js';
-import SignUp from './components/pages/Signup';
-import ChooseTaste from './components/pages/ChooseTaste';
-import Profile from './components/auth/Profile'
-import Dashboard from './components/auth/Dashboard'
-import ProtectedRoutes from "./components/auth/ProtectedRoutes";
-import ProductScreen from './components/pages/ProductScreen';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import './App.css'
+import Header from './components/Header'
+import Products from './screens/Products'
+import Main from './components/Main'
+import CartScreen from './screens/CartScreen'
+import Footer from './components/Footer'
+// import Contact from './screensContact'
+// import About from './screens/About'
+// import Subscription from './screens/Subscription'
+import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/RegisterScreen'
+// import ChooseTaste from './screens/ChooseTaste'
+import ProfileScreen from './screens/ProfileScreen'
+import ShippingScreen from './screens/ShippingScreen'
+import PaymentScreen from './screens/PaymentScreen'
+import PlaceOrderScreen from './screens/PlaceOrderScreen'
+import OrderScreen from './screens/OrderScreen'
+import UserListScreen from './screens/UserListScreen'
+import UserEditScreen from './screens/UserEditScreen'
+import ProductListScreen from './screens/ProductListScreen'
+import ProductEditScreen from './screens/ProductEditScreen'
+import OrderListScreen from './screens/OrderListScreen'
+import ProductScreen from './screens/ProductScreen'
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
-      <Route path="/" component={Main} exact />
-      <ProtectedRoutes path="/profile" component={Profile} />
-      <ProtectedRoutes path="/dashboard" component={Dashboard} />
-      <Route path="/login" component={Login} exact />
-      <Route path="/product/:id" component={ProductScreen} exact />
-      <Route path="/signup" component={SignUp} exact />
-      <Route path="/products" component={ProductsList} exact />
-      <Route path="/about" component={About} exact />
-      <Route path="/contact" component={Contact} exact />
-      <Route path="/subscription" component={Subscription} exact />
-      <Route path="/choosetaste" component={ChooseTaste} exact />
-      <Route path="/cart" component={Cart} exact />
+      <Route path='/' component={Main} exact />
+      <Route path='/products' component={Products} />
+      <Route path='/order/:id' component={OrderScreen} />
+      <Route path='/shipping' component={ShippingScreen} />
+      <Route path='/payment' component={PaymentScreen} />
+      <Route path='/placeorder' component={PlaceOrderScreen} />
+      <Route path='/login' component={LoginScreen} />
+      <Route path='/register' component={RegisterScreen} />
+      <Route path='/profile' component={ProfileScreen} />
+      <Route path='/product/:id' component={ProductScreen} />
+      <Route path='/cart/:id?' component={CartScreen} />
+      <Route path='/admin/userlist' component={UserListScreen} />
+      <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+      <Route path='/admin/productlist' component={ProductListScreen} exact />
+      <Route
+        path='/admin/productlist/:pageNumber'
+        component={ProductListScreen}
+        exact
+      />
+      <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
+      <Route path='/admin/orderlist' component={OrderListScreen} />
+      <Route path='/search/:keyword' component={Main} exact />
+      <Route path='/page/:pageNumber' component={Main} exact />
+      <Route path='/search/:keyword/page/:pageNumber' component={Main} exact />
       <Footer />
-    </BrowserRouter>
-  );
+    </Router>
+  )
 }
 
-export default App;
+export default App
